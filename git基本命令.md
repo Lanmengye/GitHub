@@ -5,7 +5,7 @@
 - Remote：远程仓库
 ![常用git命令图示](images/图解git基本命令.png)
 
-## 一、git全局配置
+## 一、git配置
 - git的配置文件.gitconfig 一般放在用户主目录下，对其可以进行全局配置或项目配置 
 ```  bash
 # 进入用户主目录
@@ -18,6 +18,10 @@ $ git config --list
 $ git config --global user.name username  
 # 设置用户邮箱          
 $ git config --global user.email useremailaddress
+# 设置git命令的别名
+$ git config --global alias.[commamdRename] [commandOriginal]
+# 存储凭证
+$ git config --global credential.helper wincred
 ```
 - 在仓库中可以添加.gitignore文件，忽略对某些文件或某些类型的文件的跟踪
 ```bash
@@ -66,6 +70,14 @@ $ git commit --amend [file1] [file2] ...
 	<body>
 	//空一行
 	<footer>
+	type:
+		feat:新功能 feature
+		fix: 修补bug
+		docs:文档 documentation
+		style:格式（不影响代码运行的变动）
+		refactor:重构（既不是新增功能，也不是修改bug的代码变动）
+		test:增加测试
+		chore:构建过程或辅助工具的变动
 
 
 - 删除文件
@@ -103,8 +115,75 @@ $ git push [remote] --tags
 # 从远程拉取所有tag
 $ git pull --tags
 ```
+## 五、查看信息
+```bash
+# 显示有变更的文件
+$ git status
+# 以短形式显示有变更的文件
+$ git status -sb (short and branch)
 
+# 显示某个提交信息
+$ git show HEAD~n
 
+# 显示当前分支的版本历史
+$ git log
+# 显示当前分支的前n条提交
+$ git log -n
+
+# 单行显示当前分支的每一次版本历史
+$ git log --oneline
+# 显示某个commit之后的所有变动，每个commit占据一行
+$ git log [tag] HEAD --pretty=format:%s
+# 以图形的方式显示提交日志
+$ git log --pretty=format:'%h %ad | %s%d' -graph -data=short
+
+# 搜索提交历史，根据关键词
+$ git log -S [keyword]
+# 显示某个commit之后的所有变动，其"提交说明"必须符合搜索条件
+$ git log [tag] HEAD --grep [feature]
+
+# 显示commit历史，以及每次commit发生变更的文件
+$ git log --stat
+# 显示某个文件的版本历史，包括文件改名
+$ git log --follow [file]
+$ git whatchanged [file]
+# 显示指定文件相关的每一次diff
+$ git log -p [file]
+# 显示指定文件是什么人在什么时间修改过
+$ git blame [file]
+# 显示所有提交过的用户，按提交次数排序
+$ git shortlog -sn
+
+# 查看工作区与暂存区的差异
+$ git diff
+# 查看暂存区与仓库的差异
+$ git diff --cached
+# 查看工作区与仓库的差异
+$ git diff HEAD
+# 查看两个版本之间的差异
+$ git diff version1 version2
+# 查看工作区与版本version1之间的差异
+$ git diff version1
+```
+## 六、回撤操作
+```bash
+# 恢复暂存区的指定文件到工作区
+$ git checkout [file]
+# 恢复某个commit的指定文件到暂存区和工作区
+$ git checkout [commit] [file]
+# 恢复暂存区的所有文件到工作区
+$ git checkout .
+# 将暂存区文件回撤到工作区（重置暂存区）
+$ git reset HEAD
+# 将提交回撤到暂存区
+$ git reset HEAD --soft
+# 回撤提交，放弃变更
+$ git reset HEAD --hard
+# 回撤远程仓库 -f即--force
+$ git push -f
+# 变基操作，改变历史提交
+$ git rebase -i HEAD~n
+```
 
 
 
