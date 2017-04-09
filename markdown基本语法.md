@@ -99,7 +99,7 @@
     - 内嵌式链接
         - 外部链接：[百度](http://www.baidu.com)
         - 内部链接1：链接仓库的其它文件：[README](README.md)
-        - 内部链接2：链接本文件的其它部分：[列表](markdown基本语法.md##三、列表)
+        - 内部链接2：链接本文件的其它部分：[列表](markdown基本语法.md## 三、列表)
     - 引用式链接
         - 外部链接：[百度] 或 [百度][baidu]
         - 内部链接1：链接仓库的其它文件：[README]
@@ -108,7 +108,7 @@
 - 内嵌式链接
     - 外部链接：[百度](http://www.baidu.com)
     - 内部链接1：链接仓库的其它文件：[README](README.md)
-    - 内部链接2：链接本文件的其它部分：[列表](markdown基本语法.md##三、列表)
+    - 内部链接2：链接本文件的其它部分：[列表](markdown基本语法.md## 三、列表)
 - 引用式链接
     - 外部链接：[百度] 或 [百度][baidu]
     - 内部链接1：链接仓库的其它文件：[README]
@@ -210,7 +210,7 @@ cell31 | cell32 | cell33
 [百度]: http://www.baidu.com 
 [baidu]: http://www.baidu.com
 [README]: README.md
-[列表]: markdown基本语法.md##三、列表
+[列表]: markdown基本语法.md## 三、列表
 [hao123_logo]: https://gss1.bdstatic.com/5eN1dDebRNRTm2_p8IuM_a/res/img/richanglogo168_24.png
 [hao123]: https://www.hao123.com
 [comment_png]: images/Comment.png
