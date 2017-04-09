@@ -184,7 +184,94 @@ $ git push -f
 # 变基操作，改变历史提交
 $ git rebase -i HEAD~n
 ```
+## 七、分支操作
+```bash
+# 列出所有本地分支
+$ git branch
+# 查看分支及其提交信息
+$ git branch -v
+# 列出所有远程分支
+$ git branch -r
+# 列出所有本地分支和远程分支
+$ git branch -a
+# 查看已合并的分支
+$ git branch --merged
+# 查看未合并的分支
+$ git branch --no-merged
 
+# 新建分支(不切换到该新建分支)
+$ git branch [branchname]
+# 切换分支
+$ git checkout branchname
+#新建分支并切换到该分支
+$ git checkout-b branchname
+# 新建一个分支，指向指定commit
+$ git branch [branch] [commit]
+# 新建一个分支，与指定的远程分支建立追踪关系
+$ git branch --track [branch] [remote-branch]
+# 修改分支名字
+$ git branch -m old_name new_name (发生冲突时修改名字失败)
+$ git branch -M old_name new_name (发生冲突时强制执行修改)
+
+
+# 删除分支
+$ git branch -d branchname (对未合并的分支执行该操作时发生错误)
+$ git branch -D branchname (强制删除)
+# 删除远程分支
+$ git push origin --delete [branch-name]
+$ git branch -dr [remote/branch]
+$ git push origin  :<remote branch>
+# 取出远程分支
+$ git checkout -t origin/branchname
+
+# 保存进度
+$ git stash
+# 弹出进度
+$ git stash pop
+# 查看进度列表
+$ git stash list
+# 删除stash列表
+$ git stash clear
+
+# 合并分支(前向快速合并、合并提交)
+$ git merge branchname
+```
+
+## 八、冲突解决
+冲突产生的原因：
+    1. 在不同分支上，修改了同一个文件
+    2. 不同的人，修改了同一个文件
+	3. 不同的仓库，修改了同一个文件
+冲突产生的时间：冲突只在合并分支的时候才会发生
+发生冲突并不可怕，冲突的代码不会丢失，解决冲突，重新提交，commit时不要给message
+冲突信息的格式：
+```bash
+<<<<<<< HEAD
+context -master
+================
+context -branch
+>>>>>>> branch
+```
+
+## 九、远程同步
+```bash
+# 下载远程仓库的所有变动
+$ git fetch [remote]
+# 显示所有远程仓库
+$ git remote -v
+# 显示某个远程仓库的信息
+$ git remote show [remote]
+# 增加一个新的远程仓库，并命名
+$ git remote add [shortname] [url]
+# 取回远程仓库的变化，并与本地分支合并
+$ git pull [remote] [branch]
+# 上传本地指定分支到远程仓库
+$ git push [remote] [branch]
+# 强行推送当前分支到远程仓库，即使有冲突
+$ git push [remote] --force
+# 推送所有分支到远程仓库
+$ git push [remote] --all
+```
 
 
 
