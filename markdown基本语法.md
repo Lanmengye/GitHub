@@ -40,13 +40,17 @@
     ---
     ___
 ```
-## 三、列表
+## 三、<span id="jump">列表</span>
 - 无序列表
-在markdown文档中可以在列表项前加上-或*（空格隔开）使其成为无序列表，同一组列表项前选用相同的符号，如统一用-或*。
+在markdown文档中可以在列表项前加上-、+或*（空格隔开）使其成为无序列表，同一组列表项前选用相同的符号，如统一用-或*。
 ```markdown
 - item1
 - item2
 - item3
+
++ item1
++ item2
++ item3
 
 * item1
 * item2
@@ -99,7 +103,7 @@
     - 内嵌式链接
         - 外部链接：[百度](http://www.baidu.com)
         - 内部链接1：链接仓库的其它文件：[README](README.md)
-        - 内部链接2：链接本文件的其它部分：[列表](markdown基本语法.md#三、列表)
+        - 内部链接2：链接本文件的其它部分：[列表](#jump)
     - 引用式链接
         - 外部链接：[百度] 或 [百度][baidu]
         - 内部链接1：链接仓库的其它文件：[README]
@@ -182,6 +186,7 @@
 
 ## 六、表格
 - 完整表格
+ 
 |    这            |    是          |   表头       |
 | :-----  		   | :-------:     | ------:      |
 | cell11 默认左对齐 | cell12居中对齐 | cell13右对齐  |
@@ -189,28 +194,29 @@
 | cell31           | cell32        | cell33       |
 
 - 精简表格
-	这   |     是   |表头
+
+这   |     是   |表头
 -------|--------|-------
 cell11 | cell12 | cell13
 cell21 | cell22 | cell23
 cell31 | cell32 | cell33
 
-## 七、 GFM语法
+## 七、 GFM（Github Flavored Markdown）语法
 - 多选框
 	- [x] 吃饭
 	- [x] 睡觉
-	- [] 打豆豆
+	- [ ] 打豆豆
 - 表情
+markdown支持emoji表情，如 :blush:
+emoji表情可参考[emoji表情](https://github.com/guodongxiaren/README/blob/master/emoji.md)
 
 
 
-
-
-<!-- 下面是本文档中用到的链接 -->
+下面是本文档中用到的链接 
 [百度]: http://www.baidu.com 
 [baidu]: http://www.baidu.com
 [README]: README.md
-[列表]: markdown基本语法.md#三、列表
+[列表]: #jump
 [hao123_logo]: https://gss1.bdstatic.com/5eN1dDebRNRTm2_p8IuM_a/res/img/richanglogo168_24.png
 [hao123]: https://www.hao123.com
 [comment_png]: images/Comment.png
