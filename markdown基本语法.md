@@ -193,6 +193,15 @@
 | cell21           | cell22        | cell23       |
 | cell31           | cell32        | cell33       |
 
+```markdown
+|    这            |    是          |   表头       |
+| :----- 	   | :-------:      | ------:      |
+| cell11 默认左对齐 | cell12居中对齐 | cell13右对齐  |
+| cell21           | cell22        | cell23       |
+| cell31           | cell32        | cell33       |
+
+```
+
 - 精简表格
 
 这   |     是   |表头
@@ -201,13 +210,27 @@ cell11 | cell12 | cell13
 cell21 | cell22 | cell23
 cell31 | cell32 | cell33
 
+```markdown
+这     |     是  |表头
+-------|--------|-------
+cell11 | cell12 | cell13
+cell21 | cell22 | cell23
+cell31 | cell32 | cell33
+```
+
 ## 七、 GFM（Github Flavored Markdown）语法
 - 多选框
 	- [x] 吃饭
 	- [x] 睡觉
 	- [ ] 打豆豆
+
+```markdown
+    - [x] 吃饭
+	- [x] 睡觉
+	- [ ] 打豆豆
+```
 - 表情
-markdown支持emoji表情，如 :blush:
+markdown支持emoji表情，如 :blush:(`:blush:`)
 emoji表情可参考[emoji表情](https://github.com/guodongxiaren/README/blob/master/emoji.md)
 
 
