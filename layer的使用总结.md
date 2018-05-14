@@ -35,7 +35,8 @@ layer是一款近年来备受青睐的web弹层组件，可以独立使用，也
 	
 	layer.open({
 	  type: 1,
-	  content: $('#id') //这里content是一个DOM，注意：最好该元素要存放在body最外层，否则可能被其它的相对元素所影响
+	  content: $('#id') //这里content是一个DOM
+         //注意：最好该元素要存放在body最外层，否则可能被其它的相对元素所影响
 	});
 	
 	
@@ -52,7 +53,8 @@ layer是一款近年来备受青睐的web弹层组件，可以独立使用，也
 	//如果是iframe层
 	layer.open({
 	  type: 2, 
-	  content: 'http://sentsin.com' //这里content是一个URL，如果你不想让iframe出现滚动条，你还可以content: ['http://sentsin.com', 'no']
+	  content: 'http://sentsin.com' //这里content是一个URL
+        //如果你不想让iframe出现滚动条，你还可以content: ['http://sentsin.com', 'no']
 	}); 
 	
 	
